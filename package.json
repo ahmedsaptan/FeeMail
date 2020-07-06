@@ -7,19 +7,26 @@
     "start": "node index.js",
     "server": "nodemon index.js",
     "client": "npm run start --prefix client",
-    "dev": "concurrently \"npm run server\"  \"npm run client\""
+    "dev": "concurrently \"npm run server\"  \"npm run client\" \"npm run webhook1\"",
+    "webhook1": "lt -h \"http://serverless.social\" -p 5000"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@sendgrid/mail": "^7.2.1",
+    "chalk": "^4.1.0",
     "concurrently": "^5.2.0",
     "cookie-session": "^1.4.0",
     "express": "^4.17.1",
+    "localtunnel": "^2.0.0",
+    "lodash": "^4.17.15",
     "mongoose": "^5.9.19",
     "morgan": "^1.10.0",
     "passport": "^0.4.1",
     "passport-google-oauth20": "^2.0.0",
-    "stripe": "^8.67.0"
+    "sendgrid": "^5.2.3",
+    "stripe": "^8.67.0",
+    "validator": "^13.1.1"
   },
   "devDependencies": {
     "nodemon": "^2.0.4"

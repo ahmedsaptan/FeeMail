@@ -5,7 +5,9 @@ const passport = require("passport");
 const morgan = require("morgan");
 const keys = require("./config/keys");
 require("./models/User");
+require("./models/Survey");
 require("./services/passport");
+require("./services/Mailer");
 
 mongoose
   .connect("mongodb://localhost:27017/emaily", {
@@ -31,8 +33,10 @@ app.use(passport.initialize());
 app.use(passport.session());
 app.use(morgan("tiny"));
 app.use(express.json());
+
 require("./routes/authRoutes")(app);
 require("./routes/billingRoutes")(app);
+require("./routes/surveyRoutes")(app);
 
 if (process.env.NODE_ENV == "production") {
   app.use(express.static("/client/build"));
