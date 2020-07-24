@@ -7,8 +7,8 @@
     "start": "node index.js",
     "server": "nodemon index.js",
     "client": "npm run start --prefix client",
-    "dev": "concurrently \"npm run server\"  \"npm run client\" \"npm run webhook1\"",
-    "webhook1": "lt -h \"http://serverless.social\" -p 5000"
+    "dev": "concurrently \"npm run server\"  \"npm run client\" \"npm run webhook\"",
+    "webhook": "lt -h \"http://serverless.social\" -p 5000 -s test"
   },
   "author": "",
   "license": "ISC",
